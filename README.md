@@ -16,11 +16,10 @@ ES5+ES6+小游戏API+开发工具链+经典小游戏
 ### 如果你不能扫码访问
 
 （如果在电脑上访问请使用chrome浏览器打开以下链接，并在控制台切换到移动设备模式；移动设备可直接访问。）
-小游戏<a href="https://github.com/jiaxiaoweist/translation-extensions/issues/new">访问链接。</a>
+小游戏<a href="https://www.jiaxiaowei.xyz/game/">访问链接。</a>
 ## 使用方法
 
-安装即用。
-
+访问即用。
 
 ## 关于作者
 
