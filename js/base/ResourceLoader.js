@@ -26,7 +26,7 @@ export class ResourceLoader {
             }
         }
     }
-    static creat(){
+    static create(){
         return new ResourceLoader()
     }
 }

@@ -1,7 +1,8 @@
 //精灵的基类，负责初始化精灵加载的资源和大小以及位置
+import {DataStore} from "./DataStore.js";
+
 export class Sprite {
-    constructor(ctx = null,
-                img = null,//img 传入Image对象
+    constructor(img = null,//img 传入Image对象
                 srcX = 0,//起始剪裁位置X坐标
                 srcY = 0,//起始剪裁位置Y坐标
                 srcW = 0,//剪裁的宽度
@@ -12,7 +13,8 @@ export class Sprite {
                 height = 0//使用图片的宽度
     ){
         //附到类的原型链上，让这个类有这些类变量
-        this.ctx = ctx;
+        this.dataSore = DataStore.getInstance();
+        this.ctx = this.dataSore.ctx;
         this.img = img;
         this.srcX= srcX;
         this.srcY = srcY;
@@ -21,20 +23,32 @@ export class Sprite {
         this.x= x;
         this.y = y;
         this.width = width;
-        this.heigth = height
+        this.height = height
     };
+    static getImage(key){
+        return DataStore.getInstance().res.get(key)
+    }
 
-    draw(){
+    draw(img = this.img,
+         srcX = this.srcX,
+         srcY = this.srcY,
+         srcW = this.srcW,
+         srcH = this.srcH,
+         x = this.x,
+         y = this.y,
+         width = this.width,
+         height = this.height
+         ){
         this.ctx.drawImage(
-        this.img,
-        this.srcX,
-        this.srcY ,
-        this. srcW,
-        this.srcH ,
-        this.x,
-        this.y,
-        this.width,
-        this.heigth
+        img,
+        srcX,
+        srcY ,
+        srcW,
+        srcH ,
+        x,
+        y,
+        width,
+        height
         );
     }
 }
